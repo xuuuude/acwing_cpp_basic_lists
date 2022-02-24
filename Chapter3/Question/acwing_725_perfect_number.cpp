@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 int main()
 {
@@ -9,16 +8,25 @@ int main()
     {
         int x;
         cin >> x;
+
         int sum = 0;
-        for (int i = 1; i < sqrt(x); i++)
+        for (int i = 1; i * i < x; i++)
         {
             if (x % i == 0)
-                sum += i;
+            {
+                if (i < x)
+                    sum += i;
+                if (i != x / i && x / i < x)
+                {
+                    sum += x / i;
+                }
+            }
         }
         if (sum == x)
-            cout << x << " is perfect" << endl;
+            cout << x << " is a perfect number" << endl;
         else
-            cout << x << " is not perfect" << endl;
+            cout << x << " is not perfect number" << endl;
     }
+
     return 0;
 }
