@@ -10,22 +10,22 @@ int main()
         cin >> x;
 
         int sum = 0;
-        for (int i = 1; i * i < x; i++)
+        for (int i = 1; i * i <= x; i++)
         {
             if (x % i == 0)
             {
                 if (i < x)
                     sum += i;
-                if (i != x / i && x / i < x)
+                if (i != x / i && x / i < x) // todo
                 {
-                    sum += x / i;
+                    sum += (x / i);
                 }
             }
         }
         if (sum == x)
-            cout << x << " is a perfect number" << endl;
+            cout << x << " is perfect" << endl;
         else
-            cout << x << " is not perfect number" << endl;
+            cout << x << " is not perfect" << endl;
     }
 
     return 0;
