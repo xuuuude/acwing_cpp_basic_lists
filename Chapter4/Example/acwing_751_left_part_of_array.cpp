@@ -25,7 +25,7 @@ int main()
 
     for (int i = 6; i <= 10; i++)
     {
-        for (int j = 0; j <= 10 - i; j++)
+        for (int j = 0; j <= 10 - i; j++) //为什么j的初值从0开始，而不是从i
         {
             s += M[i][j];
             c++;
